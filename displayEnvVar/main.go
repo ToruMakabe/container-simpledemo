@@ -11,7 +11,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/", handler)
+	http.HandleFunc("/dispvar", handler)
 	http.Handle("/static/", http.FileServer(http.Dir("./")))
 	http.ListenAndServe(":8080", nil)
 }
