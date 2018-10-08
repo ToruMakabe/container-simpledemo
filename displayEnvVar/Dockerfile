@@ -10,6 +10,6 @@ RUN go build -o main main.go
 FROM alpine:3.8
 WORKDIR /root/
 COPY --from=build-stage /tmp/main .
-COPY --from=build-stage /tmp/static/sample.html .
+COPY --from=build-stage /tmp/static/sample.html ./static/
 EXPOSE 8080
 CMD ["./main"]
